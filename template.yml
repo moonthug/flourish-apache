@@ -26,57 +26,75 @@ build:
     directory: less
 
 settings:
-  # Creates a settings panel that enables the end user to set the default state for
-  # individual visualisations made with this template.
-  #
-  # Available types:
-  # • "number" >> gives a number input. Optionally add "min:", "max:", and "step:" properties.
-  # • "string" >> gives an text input
-  # • "text" >> gives a textarea
-  # • "boolean" >> gives a checkbox
-  # • "color" >> gives a color picker
 
-  - Section title # Headings can be used to break up the settings into collapsible sections
-  - property: example_state_property # Refers to a property in the template's state object
-    name: Example number setting # Display name for the settings panel
-    description: A setting for changing a number # Optional description for the settings panel
-    type: number # See available types above
+  - property: scale
+    name: Scaler
+    description: Scale the bubbles
+    type: number
+    min: 1
+    max: 5
+    step: 0.1
+
+  - property: useLog
+    name: Use log scale
+    description: Use a log scale for the bubble radius
+    type: boolean
+
+  - property: logScale
+    name: Log Scale
+    description: Scale the bubbles log values
+    type: number
+    min: 0
+    max: 10
+    step: 0.1
+
+  - property: color
+    name: Color
+    description: Color the bubbles
+    type: color
+
+  - property: shape
+    name: Shape
+    description: Shape of graph
+    type: string
+    choices:
+      - circular
+      - flat
 
 data:
-  # Host,Date,Verb,Path,Type,HTTP Response
 
-    - dataset: logItems
-      key: host
-      name: Host
-      type: column
-      column: access_log::A
+  - dataset: logItems
+    key: host
+    name: Host
+    type: column
+    column: access_log::A
 
-    - dataset: logItems
-      key: date
-      name: Date
-      type: column
-      column: access_log::B
+  - dataset: logItems
+    key: date
+    name: Date
+    type: column
+    column: access_log::B
 
-    - dataset: logItems
-      key: verb
-      name: HTTP Verb
-      type: column
-      column: access_log::C
+  - dataset: logItems
+    key: verb
+    name: HTTP Verb
+    type: column
+    column: access_log::C
 
-    - dataset: logItems
-      key: path
-      name: Path
-      type: column
-      column: access_log::D
+  - dataset: logItems
+    key: path
+    name: Path
+    type: column
+    column: access_log::D
 
-    - dataset: logItems
-      key: type
-      name: Resource Type
-      type: column
-      column: access_log::E
+  - dataset: logItems
+    key: type
+    name: Resource Type
+    type: column
+    column: access_log::E
 
-    - dataset: logItems
-      key: response
-      name: HTTP Response Code
-      type: column
-      column: access_log::F
+  - dataset: logItems
+    key: response
+    name: HTTP Response Code
+    type: column
+    column: access_log::F
