@@ -1,4 +1,4 @@
-var //babel = require('rollup-plugin-babel'),
+var babel = require('rollup-plugin-babel'),
     nodeResolve = require('rollup-plugin-node-resolve'),
     uglify = require('rollup-plugin-uglify');
 
@@ -9,7 +9,7 @@ export default {
   dest: 'template.js',
   sourceMap: true,
   plugins: [
-    // babel()
+    babel(),
     nodeResolve({ jsnext: true }),
     uglify(),
   ]
