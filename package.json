@@ -1,0 +1,26 @@
+{
+  "name": "flourish-apache",
+  "version": "1.0.0",
+  "description": "A template for use on flourish.studio",
+  "main": "template.js",
+  "author": "alex <alex@polyglot.rodeo>",
+  "license": "ISC",
+  "keywords": [
+    "flourish"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "less": "lessc --plugin=less-plugin-clean-css --source-map less/style.less static/style.css"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "devDependencies": {
+    "rollup-plugin-babel": "^3.0.2"
+  }
+}
